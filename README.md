@@ -5,7 +5,7 @@ This is a [Brackets](https://github.com/adobe/brackets) extension that allows th
 ## Installation
 
 1. [Download](https://github.com/toshsharma/brackets-bookmarks/zipball/master) and unzip it; or clone this repo on GitHub
-2. Copy the copied/cloned folder into the Brackets `extensions/user` folder
+2. Copy the copied/cloned folder into the Brackets `extensions/user` folder. The extensions folder can be found via `Help` > `Show Extensions Folder`
 3. Restart Brackets
 
 ## Usage
