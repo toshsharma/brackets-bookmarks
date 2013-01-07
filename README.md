@@ -21,7 +21,7 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 
 ### Notes
 
-- Bookmarks are set on lines (one bookmark per line)
+- Bookmarks can be set on individual lines (one bookmark per line)
 - Bookmarks are cleared when an open document is updated outside of Brackets (causing the document to be reloaded within Brackets)
 
 ## Future
