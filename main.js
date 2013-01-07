@@ -51,7 +51,7 @@ define(function (require, exports, module) {
                 return a.originalLineNum - b.originalLineNum;
             });
     
-            var marker = _codeMirror.setMarker(pos.line, null, "ts-bookmarks-bookmark"); // This marker is automatically tracked/updated by CodeMirror, when lines are added to/removed from the document.
+            var marker = _codeMirror.setMarker(pos.line, null, "toshsharma-bookmarks-bookmark"); // This marker is automatically tracked/updated by CodeMirror, when lines are added to/removed from the document.
         }
 
         function removeBookmark(editor, pos) {
@@ -78,7 +78,7 @@ define(function (require, exports, module) {
 
         var lineInfo = _codeMirror.lineInfo(line);
         var markerClass = lineInfo.markerClass;
-        if (markerClass && markerClass.indexOf("ts-bookmarks-bookmark") > -1) {
+        if (markerClass && markerClass.indexOf("toshsharma-bookmarks-bookmark") > -1) {
             removeBookmark(editor, pos);
         } else {
             addBookmark(editor, pos);
@@ -170,7 +170,7 @@ define(function (require, exports, module) {
     }
 
     function addStyles() {
-        var cssText = ".ts-bookmarks-bookmark { background-color: #80C7F7 !important; color: #000 !important; border-radius: 2px !important; }";
+        var cssText = ".toshsharma-bookmarks-bookmark { background-color: #80C7F7 !important; color: #000 !important; border-radius: 2px !important; }";
         $("<style>").text(cssText).appendTo(window.document.head);
     }
     
@@ -184,10 +184,10 @@ define(function (require, exports, module) {
             KeyBindingManager.addBinding(commandId, shortcut);
         }
         
-        registerCommandHandler("ts.bookmarks.toggleBookmark",   "Toggle Bookmark",   toggleBookmark,   "Ctrl-F4");
-        registerCommandHandler("ts.bookmarks.nextBookmark",     "Next Bookmark",     nextBookmark,     "F4");
-        registerCommandHandler("ts.bookmarks.previousBookmark", "Previous Bookmark", previousBookmark, "Shift-F4");
-        registerCommandHandler("ts.bookmarks.clearBookmarks",   "Clear Bookmarks",   clearBookmarks,   "Ctrl-Shift-F4");
+        registerCommandHandler("toshsharma.bookmarks.toggleBookmark",   "Toggle Bookmark",   toggleBookmark,   "Ctrl-F4");
+        registerCommandHandler("toshsharma.bookmarks.nextBookmark",     "Next Bookmark",     nextBookmark,     "F4");
+        registerCommandHandler("toshsharma.bookmarks.previousBookmark", "Previous Bookmark", previousBookmark, "Shift-F4");
+        registerCommandHandler("toshsharma.bookmarks.clearBookmarks",   "Clear Bookmarks",   clearBookmarks,   "Ctrl-Shift-F4");
     }
 
     function addHandlers() {
