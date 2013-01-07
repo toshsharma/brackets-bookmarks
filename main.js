@@ -33,7 +33,8 @@ define(function (require, exports, module) {
         Menus             = brackets.getModule("command/Menus"),
         KeyBindingManager = brackets.getModule("command/KeyBindingManager"),
         DocumentManager   = brackets.getModule("document/DocumentManager"),
-        EditorManager     = brackets.getModule("editor/EditorManager");
+        EditorManager     = brackets.getModule("editor/EditorManager"),
+        AppInit           = brackets.getModule("utils/AppInit");
     
     var _documentBookmarks = {};
     var _activeDocument = null;
@@ -52,7 +53,7 @@ define(function (require, exports, module) {
     
             var marker = _codeMirror.setMarker(pos.line, null, "ts-bookmarks-bookmark"); // This marker is automatically tracked/updated by CodeMirror, when lines are added to/removed from the document.
         }
-        
+
         function removeBookmark(editor, pos) {
             var linenum = pos.line;
             var _codeMirror = editor._codeMirror;
@@ -69,7 +70,7 @@ define(function (require, exports, module) {
                 }
             }
         }
-        
+
         var editor = EditorManager.getCurrentFullEditor();
         var _codeMirror = editor._codeMirror;
         var pos    = _codeMirror.getCursor();
@@ -162,8 +163,10 @@ define(function (require, exports, module) {
     function currentDocumentChanged() {
         _activeEditor = EditorManager.getCurrentFullEditor();
         _activeDocument = DocumentManager.getCurrentDocument();
-        _activeBookmarks = _documentBookmarks[_activeDocument.url] || [];
-        _documentBookmarks[_activeDocument.url] = _activeBookmarks;
+        if (_activeDocument) {
+            _activeBookmarks = _documentBookmarks[_activeDocument.url] || [];
+            _documentBookmarks[_activeDocument.url] = _activeBookmarks;
+        }
     }
 
     function addStyles() {
@@ -199,5 +202,7 @@ define(function (require, exports, module) {
         currentDocumentChanged(); // Load up the currently open document
     }
     
-    load();
+    AppInit.appReady(function () {
+        load();
+    });
 });
