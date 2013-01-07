@@ -8,6 +8,8 @@ This is a [Brackets](https://github.com/adobe/brackets) extension that allows th
 2. Copy the copied/cloned folder into the Brackets `extensions/user` folder. The extensions folder can be found via `Help` > `Show Extensions Folder`
 3. Restart Brackets
 
+**Compatible with Brackets Sprint 18**
+
 ## Usage
 
 Bookmarks can be set using either keyboard shortcuts or entries under the Navigate menu.
