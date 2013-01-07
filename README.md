@@ -19,7 +19,7 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 - Toggle Bookmark: `Cmd-F4` (Mac) or `Ctrl-F4` (Win)
 - Next Bookmark: `F4`
 - Previous Bookmark: `Shift-F4`
-- Clear Bookmarks: `Cmd-Shift-F4` (Mac) or `Ctrl-Shift-F4`
+- Clear Bookmarks: `Cmd-Shift-F4` (Mac) or `Ctrl-Shift-F4`
 
 ### Notes
 
@@ -35,3 +35,7 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 ## Dependencies
 
 - CodeMirror 2: The extension will need to be updated if and when Brackets updates to CodeMirror 3
+
+## Screenshot
+
+<img style="max-width: 100%;" src="https://raw.github.com/toshsharma/brackets-bookmarks/master/screenshot.png" />
