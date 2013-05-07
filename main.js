@@ -64,7 +64,7 @@ define(function (require, exports, module) {
                 var bmLinenum = bookmark.find().line;
                 if (bmLinenum === linenum) {
                     bookmark.clear();
-    				_codeMirror.removeLineClass(pos.line, null, "toshsharma-bookmarks-bookmark");
+                    _codeMirror.removeLineClass(pos.line, null, "toshsharma-bookmarks-bookmark");
                     _activeBookmarks.splice(i, 1);
                     break;
                 }
@@ -153,7 +153,7 @@ define(function (require, exports, module) {
             var bookmark = _activeBookmarks[i].bookmark;
             var pos = bookmark.find();
             if (pos) {
-				_codeMirror.removeLineClass(pos.line, null, "toshsharma-bookmarks-bookmark");
+                _codeMirror.removeLineClass(pos.line, null, "toshsharma-bookmarks-bookmark");
             }
             bookmark.clear();
         }
