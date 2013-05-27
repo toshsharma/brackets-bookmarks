@@ -34,7 +34,7 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 
 ## Dependencies
 
-- CodeMirror 2: The extension will need to be updated when Brackets updates to CodeMirror 3
+CodeMirror 3
 
 ## Screenshot
 
