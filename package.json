@@ -1,0 +1,12 @@
+{
+    "name": "toshsharma.bookmarks",
+    "title": "Brackets Bookmarks",
+    "description": "Navigate within a document using bookmarks. Cmd-F4 to toggle, F4 to jump to bookmarks.",
+    "homepage": "https://github.com/toshsharma/brackets-bookmarks",
+    "version": "1.0.0",
+    "author": "Ashutosh Sharma <ashutosh@adobe.com> (http://deceptiveweb.com)",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.20.0"
+    }
+}
