@@ -4,9 +4,8 @@ This is a [Brackets](https://github.com/adobe/brackets) extension that allows th
 
 ## Installation
 
-1. [Download](https://github.com/toshsharma/brackets-bookmarks/zipball/master) and unzip it; or clone this repo on GitHub
-2. Copy the copied/cloned folder into the Brackets `extensions/user` folder. The extensions folder can be found via `Help` > `Show Extensions Folder`
-3. Restart Brackets
+1. Launch the Extension Manager within Brackets (`File` > `Extension Manager`), open the `Available` tab, search for "Brackets Bookmarks", and click `Install`.
+2. Or, [Download](https://github.com/toshsharma/brackets-bookmarks/zipball/master) and unzip this repo's tarball; or clone this repo on GitHub. Copy the copied/cloned folder into the Brackets `extensions/user` folder. The extensions folder can be found via `Help` > `Show Extensions Folder`. Restart Brackets.
 
 **Compatible with Brackets Sprint 20+**
 
