@@ -19,7 +19,7 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 - Toggle Bookmark: `Cmd-F4` (Mac) or `Ctrl-F4` (Win)
 - Next Bookmark: `F4`
 - Previous Bookmark: `Shift-F4`
-- Clear Bookmarks: `Cmd-Shift-F4` (Mac) or `Ctrl-Shift-F4`
+- Clear Bookmarks: `Cmd-Shift-F4` (Mac) or `Ctrl-Shift-F4` (Win)
 
 ### Notes
 
@@ -31,10 +31,6 @@ Bookmarks can be set using either keyboard shortcuts or entries under the Naviga
 1. Persistent bookmarks (restore bookmarks when files are reopened)
 2. API to let other extensions set/remove/query bookmarks
 3. Bookmarks at specific character positions within lines
-
-## Dependencies
-
-CodeMirror 3
 
 ## Screenshot
 
