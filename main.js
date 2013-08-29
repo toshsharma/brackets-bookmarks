@@ -84,6 +84,14 @@ define(function (require, exports, module) {
             addBookmark(editor, pos);
         }
     }
+    
+    function jumpToLine(_codeMirror, linenum) {
+        _codeMirror.setCursor({ line: linenum, ch: 0 });
+        _codeMirror.addLineClass(linenum, "wrap", "toshsharma-bookmarks-flash");
+        window.setTimeout(function () {
+            _codeMirror.removeLineClass(linenum, "wrap", "toshsharma-bookmarks-flash");
+        }, 300);
+    }
 
     function nextBookmark() {
         if (_activeBookmarks.length === 0) {
@@ -101,7 +109,7 @@ define(function (require, exports, module) {
             if (pos) {
                 var linenum = pos.line;
                 if (linenum > currentLinenum) {
-                    _codeMirror.setCursor({ line: linenum, ch: 0 });
+                    jumpToLine(_codeMirror, linenum);
                     found = true;
                     break;
                 }
@@ -110,7 +118,7 @@ define(function (require, exports, module) {
         if (!found) {
             var firstBookmarkPos = _activeBookmarks[0].bookmark.find();
             if (firstBookmarkPos) {
-                _codeMirror.setCursor({ line: firstBookmarkPos.line, ch: 0 });
+                jumpToLine(_codeMirror, firstBookmarkPos.line)
             }
         }
     }
@@ -131,7 +139,7 @@ define(function (require, exports, module) {
             if (pos) {
                 var linenum = pos.line;
                 if (linenum < currentLinenum) {
-                    _codeMirror.setCursor({ line: linenum, ch: 0 });
+                    jumpToLine(_codeMirror, linenum);
                     found = true;
                     break;
                 }
@@ -140,7 +148,7 @@ define(function (require, exports, module) {
         if (!found) {
             var lastBookmarkPos = _activeBookmarks[_activeBookmarks.length - 1].bookmark.find();
             if (lastBookmarkPos) {
-                _codeMirror.setCursor({ line: lastBookmarkPos.line, ch: 0 });
+                jumpToLine(_codeMirror, lastBookmarkPos.line);
             }
         }
     }
@@ -170,7 +178,9 @@ define(function (require, exports, module) {
     }
 
     function addStyles() {
-        var cssText = ".toshsharma-bookmarks-bookmark .CodeMirror-linenumber { background-color: #80C7F7 !important; color: #000 !important; border-radius: 2px !important; }";
+        var cssText = ".toshsharma-bookmarks-bookmark .CodeMirror-linenumber { background-color: #80C7F7 !important; color: #000 !important; border-radius: 2px !important; }" +
+            "@-webkit-keyframes toshsharma-bookmarks-flash { from { background: #A0D7F7; } to { background: inherit; } }" +
+            ".CodeMirror .toshsharma-bookmarks-flash { -webkit-animation: toshsharma-bookmarks-flash 0.3s; }";
         $("<style>").text(cssText).appendTo(window.document.head);
     }
     
