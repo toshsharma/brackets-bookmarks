@@ -85,8 +85,11 @@ define(function (require, exports, module) {
         }
     }
     
-    function jumpToLine(_codeMirror, linenum) {
-        _codeMirror.setCursor({ line: linenum, ch: 0 });
+    function jumpToLine(_activeEditor, linenum) {
+        _activeEditor.setCursorPos({ line: linenum, ch: 0 });
+		_activeEditor.centerOnCursor();
+
+		var _codeMirror = _activeEditor._codeMirror;
         _codeMirror.addLineClass(linenum, "wrap", "toshsharma-bookmarks-flash");
         window.setTimeout(function () {
             _codeMirror.removeLineClass(linenum, "wrap", "toshsharma-bookmarks-flash");
@@ -109,7 +112,7 @@ define(function (require, exports, module) {
             if (pos) {
                 var linenum = pos.line;
                 if (linenum > currentLinenum) {
-                    jumpToLine(_codeMirror, linenum);
+                    jumpToLine(_activeEditor, linenum);
                     found = true;
                     break;
                 }
@@ -118,7 +121,7 @@ define(function (require, exports, module) {
         if (!found) {
             var firstBookmarkPos = _activeBookmarks[0].bookmark.find();
             if (firstBookmarkPos) {
-                jumpToLine(_codeMirror, firstBookmarkPos.line)
+                jumpToLine(_activeEditor, firstBookmarkPos.line)
             }
         }
     }
@@ -139,7 +142,7 @@ define(function (require, exports, module) {
             if (pos) {
                 var linenum = pos.line;
                 if (linenum < currentLinenum) {
-                    jumpToLine(_codeMirror, linenum);
+                    jumpToLine(_activeEditor, linenum);
                     found = true;
                     break;
                 }
@@ -148,7 +151,7 @@ define(function (require, exports, module) {
         if (!found) {
             var lastBookmarkPos = _activeBookmarks[_activeBookmarks.length - 1].bookmark.find();
             if (lastBookmarkPos) {
-                jumpToLine(_codeMirror, lastBookmarkPos.line);
+                jumpToLine(_activeEditor, lastBookmarkPos.line);
             }
         }
     }
